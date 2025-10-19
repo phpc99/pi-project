@@ -52,6 +52,8 @@ Este repositório atua como **hub central** do projeto, contendo:
 - Adopted an iterative Agile development process, with weekly sprints, code versioning in GitLab, and collaboration via Discord;
 - Ensured scalability and future extensibility, with support planned for real-time data sources, new chart types, and advanced dashboard interactivity.
 
+# Screenshots
+
 # Authors
 
 - Hugo Miguel Lopes da Cruz
