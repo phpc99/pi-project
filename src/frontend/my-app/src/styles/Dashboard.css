@@ -1,0 +1,337 @@
+#root{
+    width: 100%;
+    height: 100%;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 90vh; /* Full height of the viewport */
+  align-self: center;
+  margin: 1rem 2rem ;
+  border-radius: 10px;
+  justify-self: left;
+  width: 96.5%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 0.5rem 1rem;
+}
+
+.dashboard-title {
+  margin-left: 0; /* Remove any left margin */
+  flex-grow: 1; /* Push other elements to the right */
+  font-size: 0.9rem;
+  color: #32cd32;
+  margin-left: 2em;
+}
+
+
+.home-button {
+  background-color: #32cd32;
+  color: #121212;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.home-button:hover {
+  background-color: #28a428;
+}
+
+.main-content {
+  display: flex;
+  flex: 1; /* Take up the remaining space */
+  max-height: 78vh; /* Prevent it from exceeding the viewport height */
+  
+}
+
+.toolbar {
+  width: 15%; /* Fixed width for the toolbar */
+  height: 100%; /* Full height of the parent */
+  background-color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-right: 1px solid #32cd32;
+  border-radius: 10px 0 0 10px; /* Rounded corners on the left */
+  border-left: 0.1px solid #e0e0e04a; /* Thin white border */
+  border-top: 0.1px solid #e0e0e04a; /* Thin white border */
+  border-bottom: 0.1px solid #e0e0e04a; /* Thin white border */
+  flex-grow: 0;
+  
+}
+
+.toolbar-button {
+  background-color: #32cd32;
+  color: #121212;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.toolbar-button:hover {
+  background-color: #28a428;
+}
+
+.visualization-window {
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  max-height: 90vh; /* Prevent it from exceeding the viewport height */
+  background-color: #121212;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 0 10px 10px 0; /* Rounded corners on the right */
+  overflow: hidden; /* Prevent content from overflowing */
+  flex-shrink: 0; 
+  flex-grow: 0; 
+}
+
+
+.layout {
+  width: 100%; /* Full width */
+  min-width: 100%;
+  height: 100%; /* Full height */
+  max-height: 100%; /* Prevent overflow */
+  min-height: 100%;
+
+  position: fixed;
+  overflow-y: auto; /* Enable vertical scrolling */
+
+}
+
+.widget-card {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border: 1px solid #32cd32;
+  border-radius: 5px;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  min-height: fit-content;
+  min-width: fit-content;
+  position: relative;
+  padding-top: 2.2em; /* Space for drag/menu buttons and title */
+}
+
+.widget-title {
+  width: 100%;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #32cd32;
+  background: transparent;
+  text-align: center;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  word-break: break-word;
+  z-index: 1;
+}
+
+.widget-title-input {
+  width: 95%;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #32cd32;
+  background: #181818;
+  border: 1px solid #32cd32;
+  border-radius: 4px;
+  text-align: center;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  padding: 0.2em 0.5em;
+  outline: none;
+}
+
+.widget-body {
+  width: 100%;
+  background: #232323;
+  color: #e0e0e0;
+  border-radius: 4px;
+  padding: 0.7em 1em;
+  font-size: 1em;
+  text-align: left;
+  min-height: 2em;
+  box-sizing: border-box;
+  word-break: break-word;
+}
+
+.widget-body-input {
+  width: 98%;
+  background: #232323;
+  color: #e0e0e0;
+  border: 1px solid #32cd32;
+  border-radius: 4px;
+  padding: 0.7em 1em;
+  font-size: 1em;
+  min-height: 2em;
+  resize: vertical;
+  outline: none;
+}
+
+.react-resizable{
+  min-height: fit-content;
+}
+
+.widget-menu-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  z-index: 2;
+  padding: 0;
+}
+
+.widget-popup-menu {
+  /* See inline styles in JSX for most styling */
+}
+
+.widget-delete-btn:hover {
+  background: #d9363e;
+}
+
+.react-grid-item > .react-resizable-handle::after {
+  border-right:  #7fb77f solid 2px !important;
+  border-bottom: #7fb77f solid 2px !important;
+  border-radius: 1px !important;
+}
+
+.react-grid-placeholder  {
+  background-color: rgba(193, 217, 193, 0.709)!important; /* Semi-transparent green */
+  border: 3px dashed #ffffff; /* Dashed border */
+  border-radius: 5px; /* Rounded corners */
+  transition: all 0.2s ease-in-out; /* Smooth transition */
+}
+
+.widget-drag-handle {
+  cursor: grab;
+  user-select: none;
+  /* Optional: visually highlight the handle */
+  transition: background 0.2s;
+}
+.widget-drag-handle:active {
+  cursor: grabbing;
+  background: rgba(50,205,50,0.25);
+}
+
+.dashboard-upload-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.dashboard-upload-form {
+  background: #232323;
+  padding: 2rem;
+  border-radius: 8px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  border: 1px solid #32cd32; /* Thin green border */
+}
+
+.dashboard-upload-form input[type="text"],
+.dashboard-upload-form textarea {
+  width: 100%;
+  background: #181818;
+  color: #e0e0e0;
+  border: 1.5px solid #32cd32;
+  border-radius: 5px;
+  padding: 0.7em 1em;
+  font-size: 1.08em;
+  margin-top: 0.3em;
+  margin-bottom: 1em;
+  outline: none;
+  transition: border 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.dashboard-upload-form input[type="text"]:focus,
+.dashboard-upload-form textarea:focus {
+  border: 2px solid #7fff7f;
+  box-shadow: 0 0 0 2px rgba(50,205,50,0.18);
+  background: #232323;
+}
+
+.dashboard-upload-form label {
+  color: #e0e0e0;
+  margin-bottom: 0.5em;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  font-size: 1em;
+}
+
+.dashboard-upload-input {
+  margin-bottom: 1em;
+  color: #e0e0e0;
+}
+
+/* Style the file input's button (works in Chrome/Edge/Opera) */
+.dashboard-upload-input::-webkit-file-upload-button {
+  background: #ff9a4d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 16px;
+  font-family: inherit;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dashboard-upload-input::file-selector-button {
+  background: #ff9a4d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 16px;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dashboard-upload-input::-webkit-file-upload-button:hover,
+.dashboard-upload-input::file-selector-button:hover {
+  opacity: 0.5;
+  transition: 0.2s;
+}
+
+.dashboard-upload-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+#root > div > div.dashboard-upload-overlay > form > input{
+  border: 1px solid white; /* Thin green border */
+  border-radius: 5px;
+  padding: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+#file-upload-button {
+  background-color: red;
+}

@@ -1,0 +1,11 @@
+Produto;Quantidade;Preço Unitário;Fornecedor;Categoria
+Caneta;10;2,5;Fornecedor A;Papelaria
+Caderno;5;15;Fornecedor B;Papelaria
+Mochila;2;120;Fornecedor C;Acessórios
+Lapis;20;1;Fornecedor A;Papelaria
+Borracha;15;0,5;Fornecedor B;Papelaria
+Lapiseira;7;2,5;Fornecedor A;Papelaria
+Tesoura;3;15;Fornecedor B;Papelaria
+aaaa;15;;;
+bbb;7;;;
+ccc;3;;;

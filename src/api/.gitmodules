@@ -1,0 +1,2 @@
+[submodule "dashboard-api"]
+	branch = endpoints-final

@@ -1,0 +1,112 @@
+enum PermissionType {
+  EDITOR
+  VIEWER
+}
+
+type User {
+  id: ID!
+  username: String!
+  email: String!
+  permission: PermissionType!
+  dashboards: [Dashboard!]!
+}
+
+type Token {
+  token: String!
+  expiresAt: String!
+  username: String!
+}
+
+type Dashboard {
+  id: ID!
+  title: String!
+  createdAt: String!
+  updatedAt: String!
+  userId: ID!
+  widgets: [Widget!]!
+  dataSources: [DataSource!]!
+}
+
+type Widget {
+  id: ID!
+  row: Int!
+  column: Int!
+  width: Int!
+  height: Int!
+  type: String!
+  dataSourceId: ID
+  parsedData: String
+  title: String
+  body: String
+}
+
+type WidgetType {
+  type: String!
+  createdAt: String!
+}
+
+type DataSource {
+  id: ID!
+  name: String!
+  url: String!
+  type: DataSourceType!
+}
+
+type DataSourceType {
+  type: String!
+  createdAt: String!
+}
+
+type Query {
+  getUser(id: ID!): User
+  getUserByName(username: String!): User
+  getDashboard(id: ID!): Dashboard
+  getDashboardByUsername(username: String!): [Dashboard!]!
+  getDashboardByUserId(userId: ID!): [Dashboard!]!
+  getWidgetById(id: ID!): Widget
+  getDataSources: [DataSource!]!
+}
+
+type Mutation {
+  register(
+    username: String!
+    email: String!
+    password: String!
+    permission: PermissionType!
+  ): User!
+
+  login(email: String!, password: String!): Token!
+
+  createDashboard(title: String!): Dashboard!
+  deleteDashboard(id: ID!): Dashboard!
+
+  createWidget(
+    dashboardId: ID!
+    row: Int!
+    column: Int!
+    width: Int!
+    height: Int!
+    type: String!
+    dataSourceId: ID
+    parsedData: String
+    title: String
+    body: String
+  ): Widget!
+
+  updateWidgetLayout(
+    id: ID!
+    row: Int!
+    column: Int!
+    width: Int!
+    height: Int!
+  ): Widget!
+
+  deleteWidget(id: ID!): Widget!
+
+  createDataSource(
+    dashboardId: ID!
+    name: String!
+    url: String!
+    type: String!
+  ): DataSource!
+}

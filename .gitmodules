@@ -1,0 +1,11 @@
+[submodule "dashboard-db"]
+	path = dashboard-db
+	url = https://gitlab.com/andrethiagonetto/dynamic-dashboard-backend.git
+[submodule "dashboard-api"]
+	path = dashboard-api
+	url = https://gitlab.com/andrethiagonetto/dynamic-dashboard-api.git
+	branch = endpoints-final
+[submodule "dashboard-frontend"]
+	path = dashboard-frontend
+	url = https://gitlab.com/andrethiagonetto/dynamic-dashboard-frontend.git
+	branch = dashboard
