@@ -34,3 +34,10 @@ Este repositório atua como **hub central** do projeto, contendo:
 4. No terceiro terminal usar o comando: cd src/frontend/my-app, para acessar o path descrito e rodar o comando: npm run dev
 5. Após executar os passos anteriores clique no link de localhost do terminal de frontend.
 6. Se o npm não funcionar tente usar npm install.
+
+# Authors
+
+- Hugo Miguel Lopes da Cruz
+- Matheus Negrini Liotti
+- Pedro Henrique Pessôa Camargo
+- Tomas dos Santos Nunes Loureiro Esteves
